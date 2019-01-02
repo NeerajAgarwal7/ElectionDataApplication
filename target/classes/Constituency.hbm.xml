@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mindtree.Election.entity.Constituency" table="constituency">
+
+		<id name="id" type="int">
+		</id>
+
+		<property name="Name" type="java.lang.String"></property>
+		
+		<set name="candidates" cascade="all">
+			<key column="id"></key>
+			<one-to-many class="com.mindtree.Election.entity.Candidate"/>
+		</set>
+	</class>
+</hibernate-mapping>
